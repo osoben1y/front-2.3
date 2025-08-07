@@ -6,7 +6,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full h-16 z-50 backdrop-blur-md bg-white/30 border-b border-white/20 shadow-sm">
       <div className="max-w-6xl mx-auto h-full flex items-center justify-between px-4">
 
-        <NavLink to="/" className="text-white text-xl font-bold tracking-wide">
+        <NavLink to="/" className="text-black text-xl font-bold tracking-wide">
           ZApp™
         </NavLink>
 
@@ -14,15 +14,15 @@ const Header = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-gray-300"
+              isActive ? "text-black font-medium" : "text-gray-300"
             }
           >
             Home
           </NavLink>
           <NavLink
-            to="/user"
+            to="/form"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-gray-300"
+              isActive ? "text-black font-medium" : "text-gray-300"
             }
           >
             Add User
