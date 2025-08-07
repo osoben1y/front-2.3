@@ -4,15 +4,15 @@ import { Outlet } from "react-router-dom";
 import Footer from "../../layout/Footer";
 
 const Layout = () => {
-    return (
-        <div>
-            <Header />
-            <main>
-                <Outlet />
-            </main>
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default React.memo(Layout);
