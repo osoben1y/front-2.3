@@ -55,7 +55,7 @@ const Form: FC<FormProps> = ({ handleAdd, handleUpdate, editingStudent }) => {
         onSubmit={handleSubmit}
         className="w-full max-w-xl backdrop-blur-lg bg-white/30 shadow-2xl rounded-xl px-8 py-10 space-y-6 border border-white/20"
       >
-        <h2 className="text-3xl font-bold text-center text-white">
+        <h2 className="text-3xl font-bold text-center text-black">
           {editingStudent ? "Update User" : "Create User"}
         </h2>
 
@@ -67,7 +67,7 @@ const Form: FC<FormProps> = ({ handleAdd, handleUpdate, editingStudent }) => {
             type="text"
             placeholder="Name"
             required
-            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-white outline-none py-2"
+            className="w-full border-b-2 border-white/30 bg-transparent text-black placeholder:text-gray-400 focus:border-white outline-none py-2"
           />
 
           <input
@@ -77,7 +77,7 @@ const Form: FC<FormProps> = ({ handleAdd, handleUpdate, editingStudent }) => {
             type="number"
             placeholder="Age"
             required
-            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-white outline-none py-2"
+            className="w-full border-b-2 border-white/30 bg-transparent text-black placeholder:text-gray-400 focus:border-white outline-none py-2"
           />
 
           <input
@@ -87,7 +87,7 @@ const Form: FC<FormProps> = ({ handleAdd, handleUpdate, editingStudent }) => {
             type="text"
             placeholder="Address"
             required
-            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-white outline-none py-2"
+            className="w-full border-b-2 border-white/30 bg-transparent text-black placeholder:text-gray-400 focus:border-white outline-none py-2"
           />
 
           <input
@@ -97,7 +97,7 @@ const Form: FC<FormProps> = ({ handleAdd, handleUpdate, editingStudent }) => {
             type="number"
             placeholder="Salary"
             required
-            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-white outline-none py-2"
+            className="w-full border-b-2 border-white/30 bg-transparent text-black placeholder:text-gray-400 focus:border-white outline-none py-2"
           />
 
           <input
@@ -107,13 +107,14 @@ const Form: FC<FormProps> = ({ handleAdd, handleUpdate, editingStudent }) => {
             type="tel"
             placeholder="Phone number"
             required
-            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-white outline-none py-2"
+            className="w-full border-b-2 border-white/30 bg-transparent text-black placeholder:text-gray-400 focus:border-white outline-none py-2"
           />
+
         </div>
 
         <button
           type="submit"
-          className="w-full bg-white/30 hover:bg-[#575757] text-white py-2 rounded-full font-semibold transition duration-300"
+          className="w-full bg-white/30 hover:bg-[#575757] text-black py-2 rounded-full font-semibold transition duration-300"
         >
           {editingStudent ? "Update" : "Create"}
         </button>

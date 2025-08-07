@@ -48,7 +48,7 @@ const Login: React.FC = () => {
             <Link to={'/'}>
               <button
                 type="submit"
-                className="w-full py-3 bg-slate-500 hover:bg-gray-500 text-white rounded-lg font-semibold transition-all duration-300"
+                className="w-full bg-white/30 hover:bg-[#575757] text-black py-2 rounded-full font-semibold transition duration-300"
               >
                 Log In
               </button>
