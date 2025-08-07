@@ -18,7 +18,7 @@ const Teacher: FC<Props> = ({ data, onDelete, setEditingItem }) => {
         return (
           <div
             key={profile.id}
-            className="bg-gradient-to-br from-[#d8c9ae] to-[#575757] text-[#1c2529] shadow-2xl rounded-3xl p-6 flex flex-col items-center transition-transform duration-300 hover:scale-105"
+            className="bg-gradient-to-br from-[#e2f3f4] to-[#6dc7d1] text-[#1c2529] shadow-2xl rounded-3xl p-6 flex flex-col items-center transition-transform duration-300 hover:scale-105"
           >
             <img
               src={profileImage}
@@ -27,10 +27,10 @@ const Teacher: FC<Props> = ({ data, onDelete, setEditingItem }) => {
             />
             <div className="text-center space-y-1">
               <h3 className="text-xl font-bold">{profile.name}</h3>
-              <p className="text-sm">Yosh: {profile.age}</p>
-              <p className="text-sm">Manzil: {profile.address}</p>
-              <p className="text-sm">Maosh: {profile.salary} so'm</p>
-              <p className="text-sm">Telefon: {profile.phone}</p>
+              <p className="text-sm">Age: {profile.age}</p>
+              <p className="text-sm">Addres: {profile.address}</p>
+              <p className="text-sm">Salary: {profile.salary} $</p>
+              <p className="text-sm">Phone number: {profile.phone}</p>
             </div>
 
             <div className="mt-4 flex gap-3">
@@ -38,13 +38,13 @@ const Teacher: FC<Props> = ({ data, onDelete, setEditingItem }) => {
                 onClick={() => setEditingItem(profile)}
                 className="px-4 py-1 text-sm bg-[#a1d1b1] hover:bg-[#8fbfa1] text-[#1c2529] rounded-full font-medium transition duration-300"
               >
-                ✏️ Tahrirlash
+                Update
               </button>
               <button
                 onClick={() => onDelete(profile.id)}
                 className="px-4 py-1 text-sm bg-red-400 hover:bg-red-500 text-white rounded-full font-medium transition duration-300"
               >
-                🗑 O‘chirish
+                Delete
               </button>
             </div>
           </div>

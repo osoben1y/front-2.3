@@ -55,7 +55,6 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
       updateList((prev) => [...prev, teacherProfile]);
     }
 
-    // Reset form
     setNameInput("");
     setYearsOld("");
     setLocation("");
@@ -67,16 +66,16 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
   return (
     <form
       onSubmit={handleSave}
-      className="w-full max-w-2xl mx-auto mt-10 bg-gradient-to-r from-[#d8c9ae] to-[#575757] shadow-2xl rounded-3xl px-8 py-10 space-y-6 text-[#1c2529]"
+      className="w-full max-w-2xl mx-auto mt-10 bg-gradient-to-br from-[#50c9ce] to-[#a1d1b1] shadow-2xl rounded-3xl px-8 py-10 space-y-6 text-[#1c2529]"
     >
       <h2 className="text-3xl font-bold text-center text-[#1c2529] drop-shadow-sm">
-        O'qituvchi Ma'lumotlari
+        Create user
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <input
           type="text"
-          placeholder="Ism"
+          placeholder="Name"
           value={nameInput}
           onChange={(e) => setNameInput(e.target.value)}
           required
@@ -85,7 +84,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
 
         <input
           type="number"
-          placeholder="Yosh"
+          placeholder="Age"
           value={yearsOld}
           onChange={(e) => setYearsOld(e.target.value)}
           required
@@ -94,7 +93,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
 
         <input
           type="text"
-          placeholder="Manzil"
+          placeholder="Address"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           required
@@ -103,7 +102,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
 
         <input
           type="number"
-          placeholder="Maosh"
+          placeholder="Salary"
           value={monthlyPay}
           onChange={(e) => setMonthlyPay(e.target.value)}
           required
@@ -112,7 +111,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
 
         <input
           type="text"
-          placeholder="Telefon"
+          placeholder="Phone number"
           value={contactNumber}
           onChange={(e) => setContactNumber(e.target.value)}
           required
@@ -120,7 +119,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
         />
 
         <div className="flex items-center gap-4 bg-white/90 px-4 py-2 rounded-xl">
-          <label className="font-medium text-sm">Jinsi:</label>
+          <label className="font-medium text-sm">Gender:</label>
           <label className="flex items-center gap-1">
             <input
               type="radio"
@@ -129,7 +128,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
               checked={genderSelect === "male"}
               onChange={() => setGenderSelect("male")}
             />
-            <span>Erkak</span>
+            <span>Male</span>
           </label>
           <label className="flex items-center gap-1">
             <input
@@ -139,7 +138,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
               checked={genderSelect === "female"}
               onChange={() => setGenderSelect("female")}
             />
-            <span>Ayol</span>
+            <span>Female</span>
           </label>
         </div>
       </div>
@@ -148,7 +147,7 @@ const Form: FC<Props> = ({ updateList, itemToEdit, clearEdit }) => {
         type="submit"
         className="w-full py-3 bg-[#1c2529] text-[#a1d1b1] hover:bg-[#333] rounded-xl font-semibold tracking-wide transition duration-300"
       >
-        {itemToEdit ? "Tahrirlashni saqlash" : "Qo‘shish"}
+        {itemToEdit ? "Update" : "Create"}
       </button>
     </form>
   );

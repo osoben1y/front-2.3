@@ -20,7 +20,7 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="min-h-screen pb-20 bg-gradient-to-br from-[#d8c9ae] to-[#575757]">
+    <main className="min-h-screen pb-20 bg-gradient-to-br from-[#e2f3f4] to-[#6dc7d1]">
       <Form
         updateList={setTeacherList}
         itemToEdit={currentlyEditing}
