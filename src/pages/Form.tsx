@@ -53,85 +53,84 @@ const Form: FC<FormProps> = ({ handleAdd, handleUpdate, editingStudent }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white shadow-2xl rounded-xl px-8 py-10 w-full max-w-xl mx-auto space-y-6"
-    >
-      <h2 className="text-3xl font-bold text-center text-indigo-600">
-        {editingStudent ? "Talabani tahrirlash" : "Yangi talaba qo‘shish"}
-      </h2>
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#d8c9ae] to-[#575757] px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-xl backdrop-blur-lg bg-white/30 shadow-2xl rounded-xl px-8 py-10 space-y-6 border border-white/20"
+      >
+        <h2 className="text-3xl font-bold text-center text-indigo-700 drop-shadow-md">
+          {editingStudent ? "Talabani tahrirlash" : "Yangi talaba qo‘shish"}
+        </h2>
 
-      <div className="space-y-4">
-        <input
-          value={formData.fullName}
-          onChange={handleChange}
-          name="fullName"
-          type="text"
-          placeholder="To‘liq ism"
-          required
-          className="w-full border-b-2 border-gray-300 focus:border-indigo-500 outline-none py-2 text-gray-800 placeholder:text-gray-400"
-        />
-        <input
-          value={formData.email}
-          onChange={handleChange}
-          name="email"
-          type="email"
-          placeholder="Email manzili"
-          required
-          className="w-full border-b-2 border-gray-300 focus:border-indigo-500 outline-none py-2 text-gray-800 placeholder:text-gray-400"
-        />
-
-        <div className="relative">
+        <div className="space-y-4">
           <input
-            value={formData.password}
+            value={formData.fullName}
             onChange={handleChange}
-            name="password"
-            type={showPassword ? "text" : "password"}
-            placeholder="Parol"
+            name="fullName"
+            type="text"
+            placeholder="To‘liq ism"
             required
-            className="w-full border-b-2 border-gray-300 focus:border-indigo-500 outline-none py-2 text-gray-800 placeholder:text-gray-400 pr-10"
+            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-indigo-300 outline-none py-2"
           />
-          <button
-            type="button"
-            onClick={() => setShowPassword((prev) => !prev)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500"
+
+          <input
+            value={formData.email}
+            onChange={handleChange}
+            name="email"
+            type="email"
+            placeholder="Email manzili"
+            required
+            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-indigo-300 outline-none py-2"
+          />
+
+          <div className="relative">
+            <input
+              value={formData.password}
+              onChange={handleChange}
+              name="password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Parol"
+              required
+              className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-indigo-300 outline-none py-2 pr-10"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white"
+            >
+              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+            </button>
+          </div>
+
+          <input
+            value={formData.birthDate}
+            onChange={handleChange}
+            name="birthDate"
+            type="date"
+            required
+            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-indigo-300 outline-none py-2"
+          />
+
+          <select
+            value={formData.gender}
+            onChange={handleChange}
+            name="gender"
+            required
+            className="w-full border-b-2 border-white/30 bg-transparent text-white placeholder:text-white/70 focus:border-indigo-300 outline-none py-2"
           >
-            {showPassword ? (
-              <FontAwesomeIcon icon={faEyeSlash} />
-            ) : (
-              <FontAwesomeIcon icon={faEye} />
-            )}
-          </button>
+            <option className="text-black" value="male">Erkak</option>
+            <option className="text-black" value="female">Ayol</option>
+          </select>
         </div>
 
-        <input
-          value={formData.birthDate}
-          onChange={handleChange}
-          name="birthDate"
-          type="date"
-          required
-          className="w-full border-b-2 border-gray-300 focus:border-indigo-500 outline-none py-2 text-gray-800 placeholder:text-gray-400"
-        />
-
-        <select
-          value={formData.gender}
-          onChange={handleChange}
-          name="gender"
-          required
-          className="w-full border-b-2 border-gray-300 focus:border-indigo-500 outline-none py-2 text-gray-800 bg-white"
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-full font-semibold transition duration-300"
         >
-          <option value="male">Erkak</option>
-          <option value="female">Ayol</option>
-        </select>
-      </div>
-
-      <button
-        type="submit"
-        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-full font-semibold transition duration-300"
-      >
-        {editingStudent ? "Yangilash" : "Qo‘shish"}
-      </button>
-    </form>
+          {editingStudent ? "Yangilash" : "Qo‘shish"}
+        </button>
+      </form>
+    </main>
   );
 };
 
